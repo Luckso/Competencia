@@ -1,14 +1,21 @@
 export interface ResTopHeadlines {
   status: string;
-  sources: Source[];
+  totalResults: number;
+  articles: Article[];
+}
+
+export interface Article {
+  source: Source;
+  author?: string;
+  title: string;
+  description?: string;
+  url: string;
+  urlToImage: string;
+  publishedAt: string;
+  content?: string;
 }
 
 export interface Source {
-  id: string;
+  id?: string;
   name: string;
-  description: string;
-  url: string;
-  category: string;
-  language: string;
-  country: string;
 }
