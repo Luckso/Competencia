@@ -1,7 +1,7 @@
 <ion-header [translucent]="true" no-border>
   <ion-toolbar>
     <ion-title>
-      Aplicación de Competencias
+      Noticias
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,7 +11,8 @@
     <ion-row>
       <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12" 
       *ngFor="let item of news; let i = index">
-        <ion-card>
+        <ion-card (click)="openWithSystemBrowser(item.url)">
+        <!-- <ion-card> -->
           <ion-card-header>
             <ion-card-subtitle>
                <span class="text-primary">{{ i+1 }}. </span>
@@ -21,7 +22,8 @@
               {{ item.title }}
             </ion-card-title>
           </ion-card-header>
-          <ion-img *ngIf="item.urlToImage" [src] = "item.urlToImage"></ion-img>
+          <!-- Siempre es null -->
+          <!-- <ion-img *ngIf="item.image" [src] = "item.image"></ion-img> -->
           <ion-card-content>
             <p>
               {{ item.description }}

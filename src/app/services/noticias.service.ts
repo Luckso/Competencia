@@ -11,6 +11,6 @@ export class NoticiasService {
 
   getTopHeadLines() {
       // tslint:disable-next-line: max-line-length
-      return this.http.get<ResTopHeadlines>(`http://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=80f6e96f30f0472fa7f605288a7b606d`);
+      return this.http.get<ResTopHeadlines>(`https://gnews.io/api/v3/topics/nation?token=772f2fae750a1627c37ddd483ef078c7&lang=es&country=bo`);
   }
 }
