@@ -10,15 +10,15 @@ import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser/
 })
 export class Tab1Page implements OnInit {
 
-  options : InAppBrowserOptions = {
-    location : 'yes',
-    hidden : 'no',
+  options: InAppBrowserOptions = {
+    location: 'yes',
+    hidden: 'no',
     clearcache : 'yes',
-    clearsessioncache : 'yes',
-    zoom : 'yes',
-    hardwareback : 'yes',
-    mediaPlaybackRequiresUserAction : 'no',
-    shouldPauseOnSuspend : 'no',
+    clearsessioncache: 'yes',
+    zoom: 'yes',
+    hardwareback: 'yes',
+    mediaPlaybackRequiresUserAction: 'no',
+    shouldPauseOnSuspend: 'no',
 };
 
   news: Article[] = [];
@@ -33,7 +33,7 @@ export class Tab1Page implements OnInit {
   }
 
   public openWithSystemBrowser(url: string) {
-    let target = "_system";
-    this.iab.create(url,target,this.options);
+    const target = '_system';
+    this.iab.create(url, target, this.options);
   }
 }

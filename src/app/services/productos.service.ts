@@ -17,7 +17,7 @@ export class ProductosService {
       // tslint:disable-next-line: max-line-length
       desc: 'Nulla justo sem, ornare et tortor in, sagittis vestibulum nulla. Mauris ullamcorper eu nisl eget luctus. Aliquam nec nisi tortor. Cras porta vel velit sit amet vehicula.',
       // tslint:disable-next-line: max-line-length
-      img: 'https://lh3.googleusercontent.com/proxy/AlvkKsash5az0y_WzUCbsVOWbmIwuhiCokcQV4dQqGCLCxVE3Lv4Ejq5i0Tgi6cAHJBDzNPMEnEWTIEnJT7752kJf-8MwZQfGdANZtbJMdvxLchayVtZ3AfaVu5_EIpkfC8bhQ',
+      img: 'http://papelcruz.com/tiendav2/12-thickbox_default/azucar-guabira-de-1-kg.jpg',
       precio_sugerido: '25',
     },
     {

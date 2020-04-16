@@ -1,17 +1,15 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Google Maps :D
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<div id="map_canvas" style="height: 100%; width: 100%,"></div>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button color="danger" (click)="localizar()">
+    <ion-icon name="pin"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
-</ion-content>

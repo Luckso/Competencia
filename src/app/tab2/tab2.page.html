@@ -1,17 +1,53 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" no-border>
   <ion-toolbar>
-    <ion-title>
-      Tab 2
+    <ion-title *ngIf="this.day() == 6">
+      No salgas
+    </ion-title>
+    <ion-title *ngIf="this.day() == 0">
+      No salgas
+    </ion-title>
+    <ion-title *ngIf="this.day() == 1">
+      Hoy salen terminaciones 1 - 2
+    </ion-title>
+    <ion-title *ngIf="this.day() == 2">
+      Hoy salen terminaciones 3 - 4
+    </ion-title>
+    <ion-title *ngIf="this.day() == 3">
+      Hoy salen terminaciones 5 - 6
+    </ion-title>
+    <ion-title *ngIf="this.day() == 4">
+      Hoy salen terminaciones 7 - 8
+    </ion-title>
+    <ion-title *ngIf="this.day() == 5">
+      Hoy salen terminaciones 9 - 0
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12" 
+      *ngFor="let item of prod; let i = index">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>
+              Precio Sugerido
+              {{ item.precio_sugerido }}
+            </ion-card-subtitle>
+            <ion-card-title>
+              <span class="text-primary">{{ i+1 }}. </span>
+              <span>{{ item.nombre | uppercase }}</span>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-img *ngIf="item.img" [src] = "item.img"></ion-img>
+          <ion-card-content>
+            <p>
+              {{ item.desc }}
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
