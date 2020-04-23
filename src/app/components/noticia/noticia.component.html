@@ -1,0 +1,27 @@
+<ion-card color = "dark" class="animated fadeInDown fast">
+  <ion-card-header>
+    <ion-card-subtitle>
+       <span class="text-primary">{{ indice + 1 }}. </span>
+       <span class="new-name">{{ item.source.name }}</span>
+
+       <div class="noticia-more">
+        <ion-button fill = "clear"
+                    (click)="lanzarMenu()">
+          <ion-icon slot="icon-only"
+                    name="chevron-down-outline">
+          </ion-icon>
+        </ion-button>
+       </div>
+    </ion-card-subtitle>
+    <ion-card-title (click)="openWithSystemBrowser(item.url)">
+      {{ item.title }}
+    </ion-card-title>
+  </ion-card-header>
+  <!-- Siempre es null -->
+  <!-- <ion-img *ngIf="item.image" [src] = "item.image"></ion-img> -->
+  <ion-card-content>
+    <p>
+      {{ item.description }}
+    </p>
+  </ion-card-content>
+</ion-card>

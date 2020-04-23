@@ -79,22 +79,21 @@ export class Tab3Page implements OnInit {
       styles: this.style
     });
 
-    // this.markers.forEach(marker => {
-    //   this.addMarker(marker);
-    // });
+    this.markers.forEach(marker => {
+      this.addMarker(marker);
+    });
   }
 
-  // addMarker(options){
-  //   const markerOptions: MarkerOptions = {
-  //     position: new LatLng(options.position.latitude, options.position.longitude),
-  //     title: options.title,
-  //   };
-  //   this.map.addMarker(markerOptions);
-  // }
+  addMarker(options){
+    const markerOptions: MarkerOptions = {
+      position: new LatLng(options.position.lat, options.position.lng),
+      title: options.title,
+    };
+    this.map.addMarker(markerOptions);
+  }
 
   async localizar() {
-    this.map.clear();
-
+    // this.map.clear();
     this.loading = await this.loadingCtrl.create({
       message: 'Espera por favor...'
     });
@@ -121,7 +120,7 @@ export class Tab3Page implements OnInit {
         marker.showInfoWindow();
 
         marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
-          this.showToast('clicked!');
+          this.showToast('Estas Aquí =)');
         });
       })
       .catch(error => {

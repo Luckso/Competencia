@@ -10,9 +10,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
+// plugins
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { GoogleMaps } from '@ionic-native/google-maps';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import { GoogleMaps } from '@ionic-native/google-maps';
     GoogleMaps,
     StatusBar,
     SplashScreen,
+    SocialSharing,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

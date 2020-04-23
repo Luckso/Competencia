@@ -1,5 +1,5 @@
-<ion-header [translucent]="true" no-border>
-  <ion-toolbar>
+<ion-header [translucent]="true" no-border color = "dark" >
+  <ion-toolbar color = "dark">
     <ion-title *ngIf="this.day() == 6">
       No salgas
     </ion-title>
@@ -24,12 +24,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" color = "dark">
   <ion-grid fixed>
     <ion-row>
       <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12" 
       *ngFor="let item of prod; let i = index">
-        <ion-card>
+        <ion-card color="dark" class="animated fadeInDown fast">
           <ion-card-header>
             <ion-card-subtitle>
               Precio Sugerido

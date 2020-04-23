@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NoticiasService } from '../services/noticias.service';
 import { Article } from '../interface/interface';
-import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-tab1',
@@ -10,19 +9,8 @@ import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser/
 })
 export class Tab1Page implements OnInit {
 
-  options: InAppBrowserOptions = {
-    location: 'yes',
-    hidden: 'no',
-    clearcache : 'yes',
-    clearsessioncache: 'yes',
-    zoom: 'yes',
-    hardwareback: 'yes',
-    mediaPlaybackRequiresUserAction: 'no',
-    shouldPauseOnSuspend: 'no',
-};
-
   news: Article[] = [];
-  constructor( private noticiasService: NoticiasService, private iab: InAppBrowser ) {}
+  constructor( private noticiasService: NoticiasService ) {}
 
   ngOnInit() {
     this.noticiasService.getTopHeadLines().subscribe( resp => {
@@ -30,10 +18,5 @@ export class Tab1Page implements OnInit {
       // Inserción de manera independiente en el arreglo news
       this.news.push( ...resp.articles );
     });
-  }
-
-  public openWithSystemBrowser(url: string) {
-    const target = '_system';
-    this.iab.create(url, target, this.options);
   }
 }
